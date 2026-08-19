@@ -10,15 +10,15 @@
 # Markers filled by packaging/render.mjs: VERSION, SHA256_ARM64, SHA256_X64.
 
 cask "tide" do
-  version "0.1.4-beta"
+  version "0.2.0-beta"
 
   on_arm do
-    sha256 "956229c9e300897f467c06c6d4e9b618ff8f9a63ed41edd5611883eeb8bf0a3f"
+    sha256 "f7379a0da982ede3f75bace4f0fc3eb410e9f4389b2ea3fc87554b1b7ca64af5"
 
     url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide-#{version}-arm64.dmg"
   end
   on_intel do
-    sha256 "9969527f976ae8d939f36a883e8262c33b4a720fe31347f91b57c25bf7d83110"
+    sha256 "14b39f46428aa7817da49fe7cd62aa0292beb1e60c46b299fca29bdce06bfd5a"
 
     url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide-#{version}-x64.dmg"
   end
