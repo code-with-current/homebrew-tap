@@ -4,15 +4,15 @@
 # Markers filled by packaging/render.mjs: VERSION, SHA256_ARM64, SHA256_X64.
 
 cask "tide" do
-  version "0.4.0-beta.1"
+  version "0.4.0-beta.2"
 
   on_arm do
-    url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide_#{version}_aarch64.dmg"
-    sha256 "8d6fe27bc4656b9a183397c82b8d08aecab184a5f65f377fabdc7c2af0df6937"
+    url "https://github.com/code-with-current/tide/releases/download/v#{version}/tide_v#{version}_mac-aarch64.dmg"
+    sha256 "4175dfb53c43763ef077d6bc857489bf2e09dccbb643b6523f1b676a95800dd4"
   end
   on_intel do
-    url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide_#{version}_x64.dmg"
-    sha256 "21934a6d3f94f9c3c3fde1775af65f229a5cccdcba6901e89309c234b2d41eeb"
+    url "https://github.com/code-with-current/tide/releases/download/v#{version}/tide_v#{version}_mac-x64.dmg"
+    sha256 "4c10caf3f4d1b4eb695ccdc0afc4a8f9fa0b8a20d7fca27b8c8a6cf52ca303b9"
   end
   name "Tide"
   desc "Local-first agentic coding companion"
