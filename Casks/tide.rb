@@ -1,37 +1,28 @@
-# Homebrew Cask for Tide.
-#
-# First-time submission: PR this file to homebrew/homebrew-cask as
-# Casks/t/tide.rb (https://github.com/Homebrew/homebrew-cask). Run
-# `brew audit --cask tide` and `brew style Casks/t/tide.rb` locally first.
-#
-# After the cask is merged, subsequent releases are bumped automatically by
-# .github/workflows/release-pkgs.yml (`brew bump-cask-pr`).
+# Homebrew Cask for Tide (published to our own tap,
+# code-with-current/homebrew-tap, by .github/workflows/release-pkgs.yml).
 #
 # Markers filled by packaging/render.mjs: VERSION, SHA256_ARM64, SHA256_X64.
 
 cask "tide" do
-  version "0.2.0-beta.2"
+  version "0.4.0-beta.1"
 
   on_arm do
-    sha256 "c65b5f8bc353132848c5c597fa9e377feb047e7b8241e582cba7d80b74e92ce0"
-
-    url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide-#{version}-arm64.dmg"
+    url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide_#{version}_aarch64.dmg"
+    sha256 "8d6fe27bc4656b9a183397c82b8d08aecab184a5f65f377fabdc7c2af0df6937"
   end
   on_intel do
-    sha256 "94b2ae7610a0377382aaa2db933b15bd16b1e594eea38805f1b54f70a69eaa46"
-
-    url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide-#{version}-x64.dmg"
+    url "https://github.com/code-with-current/tide/releases/download/v#{version}/Tide_#{version}_x64.dmg"
+    sha256 "21934a6d3f94f9c3c3fde1775af65f229a5cccdcba6901e89309c234b2d41eeb"
   end
-
   name "Tide"
   desc "Local-first agentic coding companion"
   homepage "https://tide.codes/"
 
+  depends_on :macos
+
   # The .app is ad-hoc signed (no Apple Developer ID), so users see an
   # "unidentified developer" prompt on first launch. homebrew passes
   # --no-quarantine by default for casks, which suppresses Gatekeeper.
-  depends_on :macos
-
   app "Tide.app"
 
   zap trash: [
