@@ -1,28 +1,18 @@
-# Homebrew Cask for Tide (published to our own tap,
-# code-with-current/homebrew-tap, by .github/workflows/release-pkgs.yml).
-#
-# Markers filled by packaging/render.mjs: VERSION, SHA256_ARM64, SHA256_X64.
-
 cask "tide" do
-  version "0.4.0-beta.2"
+  version "0.1.16"
 
-  on_arm do
-    url "https://github.com/code-with-current/tide/releases/download/v#{version}/tide_v#{version}_mac-aarch64.dmg"
-    sha256 "4175dfb53c43763ef077d6bc857489bf2e09dccbb643b6523f1b676a95800dd4"
-  end
-  on_intel do
-    url "https://github.com/code-with-current/tide/releases/download/v#{version}/tide_v#{version}_mac-x64.dmg"
-    sha256 "4c10caf3f4d1b4eb695ccdc0afc4a8f9fa0b8a20d7fca27b8c8a6cf52ca303b9"
-  end
+  url "https://github.com/code-with-current/tide/releases/download/v#{version}/tide-v#{version}-mac-arm64.dmg",
+      verified: "github.com/code-with-current/tide/releases/"
+  sha256 "2e64bffe8a7abf252e16aceb16724635b1816c186ae1788eb1070c0016736494"
+
+  depends_on arch: :arm64
+
   name "Tide"
   desc "Local-first agentic coding companion"
   homepage "https://tide.codes/"
 
-  depends_on :macos
-
-  # The .app is ad-hoc signed (no Apple Developer ID), so users see an
-  # "unidentified developer" prompt on first launch. homebrew passes
-  # --no-quarantine by default for casks, which suppresses Gatekeeper.
+  # The .app is ad-hoc signed (no Apple Developer ID). Homebrew installs
+  # casks without quarantine, which suppresses the Gatekeeper prompt.
   app "Tide.app"
 
   zap trash: [
